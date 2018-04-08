@@ -11,5 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require uikit-icons
+//= require uikit
 //= require turbolinks
 //= require_tree .

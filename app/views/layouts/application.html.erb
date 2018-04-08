@@ -9,8 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="uk-container">
+      <%= link_to("NOGIBOARD", "/")%>
+      <%= link_to("ログイン", "#")%>
+      <%= link_to("新規登録","/signup")%>
+      <%= yield %>
+    </div>
   </body>
 </html>
-
-<%= link_to("ログイン", "/login")%>
