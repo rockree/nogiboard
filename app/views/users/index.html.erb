@@ -1,40 +1,17 @@
-<header>
-  <div class="header-logo">
-    <a href="/">NOGI BOARD</a>
-  </div>
-
-  <ul>
-    <ul class="header-menu">
-      <li>
-      <a href="#">ログアウト</a>
-      </li>
-      <li>
-        <a href="#">新規投稿</a>
-      </li>
-    </ul>
-  </ul>
-</header>
-
-<% users =
-  [
-    "白石麻衣",
-    "西野七瀬"
-    ]
-%>
-
 <div class="uk-container">
-  <% users.each do|user| %>
-
-    <div class="main users--index">
-      <div class="container">
+  <div class="main users-index">
+    <div class="container">
+      <h1 class="users-heading">ユーザー一覧</h1>
+      <% @users.each do |user| %>
         <div class="users-index-item">
-
-          <%= user %>
+          <div class="user-left">
+            <%= image_tag user.image_name, width: "120" %>
+          </div>
           <div class="user-right">
+            <%= link_to(user.name, "/users/#{user.id}") %>
           </div>
         </div>
-      </div>
-  <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<!--どこかにlink_toを挿入して、indexから詳細ページに飛べるようにする！>
