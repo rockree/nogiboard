@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  get 'posts/index' => "posts#index"
+  get "posts/new" => "posts#new"
+  post "posts/create" => "posts#create"
+  get "posts/:id" => "posts#show"
+
   get "users/:id/edit" => "users#edit"
   post "users/:id/update" => "users#update"
   get "signup" => "users#new"
@@ -8,11 +14,12 @@ Rails.application.routes.draw do
   get "/" => "home#top"
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
+
   get "login" => "users#login_form"
   post "login" => "users#login"
 
-  get "posts/index" =>"posts#index"
 
+  post "logout" => "users#logout"
 
 
 

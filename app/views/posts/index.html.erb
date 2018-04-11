@@ -1,2 +1,13 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="uk-container">
+  <div class="main posts-index">
+    <div class="container">
+      <h1 class="posts-heading">投稿一覧</h1>
+      <% @posts.each do |post| %>
+        <div>
+          <%#= post.inspect %>
+          <%= link_to(post.content,"/posts/#{post.id}")%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

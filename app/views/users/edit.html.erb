@@ -3,12 +3,12 @@
     <div class="container">
       <div class="form-heading">アカウント編集</div>
         <div class="form-body">
-          <!-- フォームの送信先を指定してください -->
+          <!-- フォームの送信先を指定する -->
         <%= form_tag("/users/#{@user.id}/update", {multipart: true})do %>
           <h2>画像</h2>
           <input type="file" name="image">
           <p>ユーザー名</p>
-          <!-- name属性を設定してください -->
+          <!-- name属性を設定する -->
           <input name="name" value="<%= @user.name %>">
           <p>メールアドレス</p>
           <input name="email" value="<%= @user.email %>">
