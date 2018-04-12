@@ -15,3 +15,16 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   margin: 0 auto;
+   padding: 0 auto;
+   width: 1100px;
+
+ }
+
+li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 30px;
+}

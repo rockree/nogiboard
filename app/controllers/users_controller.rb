@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(email: params[:email], password: params[:password])
+    encrypted_password = OpenSSL::Digest::SHA256.hexdigest(params[:password])
+    @user = User.find_by(email: params[:email], password: encrypted_password)
     if @user
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
@@ -34,16 +35,20 @@ class UsersController < ApplicationController
   end
 
   def create
+    password = params[:password]
+    encrypted_password = (OpenSSL::Digest::SHA256).hexdigest(password)
+
     @user = User.new(
       name: params[:name],
       email: params[:email],
       image_name: "default_user.jpg",
-      password: params[:password]
+      password: encrypted_password
     )
 
     if @user.save
-    session[:user_id] = @user.id
-    redirect_to("/users/#{@user.id}")
+      session[:user_id] = @user.id
+      redirect_to("/users/#{@user.id}")
+      NoticeMailer.sendmail_confirm(@user).deliver
     end
   end
 
@@ -69,5 +74,13 @@ class UsersController < ApplicationController
       render("/users/#{@user.id}")
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    @user = User.find_by(id: params[:id])
+    @user.destroy
+    redirect_to("/login")
+  end
+
 
 end

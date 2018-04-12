@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <%= @user.name %>さま
+    <hr/>
+      <p>
+        この度は、本サイトへユーザ登録をいただきましてありがとうございました。<br/>
+        以下は、登録いただいたユーザ情報です。
+      </p>
+
+      <ul>
+        <li>
+          ユーザ名：<%= @user.name %>
+        </li>
+
+        <li>
+          パスワード：（セキュリティ保護のため、伏せています）
+        </li>
+
+        <li>
+          メールアドレス：<%= @user.email %>
+        </li>
+      </ul>
+
+    <hr/>
+      <%= mail_to 'nogiboard_staff@nogizaka.jp)', '「乃木坂メンバー専用SNS・NOGIBOARD（乃木ボード）」事務局' %>
+
+  </body>
+</html>  

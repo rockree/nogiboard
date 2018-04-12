@@ -10,6 +10,10 @@
     </div>
 
     <div class="posts-show-index">
+      <div class="post-show-item">
+      <% if @post.image_name %>
+        <%= image_tag "/post_images/#{@post.image_name}", width: "120" %>
+      <%end%>
       <%= @post.content %>
     </div>
 

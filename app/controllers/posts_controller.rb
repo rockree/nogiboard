@@ -16,20 +16,20 @@ class PostsController < ApplicationController
     @post = Post.new(
       user_id: session[:user_id],
       content: params[:content],
-      image_name: "default-user.jpg"
     )
+
+    if @post.save
+      flash[:notice]="投稿しました"
+      redirect_to("/posts/index")
+    else
+      render("/posts/new")
+    end
 
     if params[:image]
       @post.image_name = "#{@post.id}.jpg"
       image = params[:image]
       File.binwrite("public/post_images/#{@post.image_name}",image.read)
-    end
-
-    if @post.save
-      flash[:notice]="投稿情報を変更しました"
-      redirect_to("/posts/index")
-    else
-      render("/posts/new")
+      @post.save
     end
 
   end
@@ -39,12 +39,20 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
+
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
-    @post.save
-    redirect_to("/posts/index")
+
+    if @post.save
+      flash[:notice]="編集しました"
+      redirect_to("/posts/index")
+
+    else
+      render("/posts/edit")
+    end
   end
+
 
   def destroy
     @post = Post.find_by(id: params[:id])
