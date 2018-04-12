@@ -1,8 +1,15 @@
 <div class="uk-container">
   <div class="post-new-index">
-    <%= form_tag("/posts/create")do %>
-    <textarea name="content" rows="8" cols="140"></textarea>
-    <input type="submit" value="投稿">
+
+    <%= form_tag("/posts/create", {multipart: true})do %>
+
+      <div class="form-body">
+        <h2>画像</h2>
+        <input type="file" name="image">
+      </div>
+      <textarea name="content" rows="8" cols="140"></textarea>
+      <input type="submit" value="投稿">
+
     <% end %>
   </div>
 </div>

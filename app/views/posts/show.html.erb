@@ -4,13 +4,25 @@
       <%= "idが「#{@post.id}」の投稿詳細画面です" %>
     </p>
 
+    <div class="posts-left">
+      <%= image_tag "/user_images/#{@user.image_name}", width: "120" %>
+      <%= link_to(@user.name, "/users/#{@user.id}")%>
+    </div>
+
     <div class="posts-show-index">
       <%= @post.content %>
     </div>
 
-    <div class="post-time">
-      <%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %>
+    <% if @post.user_id == @current_user.id %>
 
-    </div>
+      <div class="post-item">
+        <%= link_to("編集","/posts/#{@post.id}/edit")%>
+        <%= link_to("削除","/posts/#{@post.id}/destroy" ,{method:"post"})%>
+      </div>
+
+      <div class="post-time">
+        <%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %>
+      </div>
+    <% end %>
   </div>
 </div>
