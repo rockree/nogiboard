@@ -4,12 +4,15 @@
     <%= form_tag("/posts/create", {multipart: true})do %>
 
       <div class="form-body">
-        <h2>画像</h2>
+        <h2>新規投稿</h2>
         <input type="file" name="image">
       </div>
-
-      <textarea name="content" rows="8" cols="140"></textarea>
-      <input type="submit" value="投稿">
+      <div class="text-box">
+        <textarea name="content" rows="14" cols="140"></textarea>
+      </div>
+      <div class="text-button">
+        <input type="submit" value="投稿">
+      </div>
 
     <% end %>
 

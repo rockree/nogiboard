@@ -1,12 +1,21 @@
 <div class="uk-container">
   <div class="user-show-item">
     <div class="container">
-      <div class="user">
-        <%= image_tag "#{@user.image_name}", width: "120" %>
+      <div class="user-icon">
+        <%= content_tag :div, nil, class: 'user-icon', style: %Q(background-image: url('#{asset_path @user.image_name}')) %>
+
+      </div>
+      <div class="user-name">
         <h2><%= @user.name %></h2>
+      </div>
+      <div class="user-email">
         <p><%= @user.email %></p>
-        <%= link_to("編集","/users/#{@user.id}/edit")%>
-        <%= link_to("退会","/users/#{@user.id}/destroy" ,{method:"post"})%>
+      </div>
+      <div class="user-link">
+        <% if @user.id == @current_user.id %>
+          <%= link_to("編集","/users/#{@user.id}/edit")%>
+          <%= link_to("退会","/users/#{@user.id}/destroy" ,{method:"post"})%>
+        <% end %>
       </div>
     </div>
   </div>

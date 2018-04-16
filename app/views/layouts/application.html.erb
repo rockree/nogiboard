@@ -11,44 +11,49 @@
   <body>
     <div class="uk-container">
       <div class="header-main-logo">
-        <li>
-          <%= link_to("NOGIBOARD", "/")%>
-        </li>
+        <ul>
+          <a href="/"><%= image_tag("home/nogiboard.png", width: 100, height: 50, alt: 'NOGIBOARD') %></a>
+        </ul>
 
-        <ul class= "header-menu">
-          <% if session[:user_id] %>
-            <li>
-              現在ログインしているユーザーのid:
-              <%= session[:user_id] %>
-            </li>
+      </div>
 
-            <li>
+      <div class="header-menu">
+        <ul class= "header-menus">
+          <% if @current_user %>
+            <ul>
+              <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+            </ul>
+
+            <ul>
               <%= link_to("新規投稿","/posts/new")%>
-            </li>
+            </ul>
 
-            <li>
+            <ul>
               <%= link_to("ユーザー一覧","/users/index")%>
-            </li>
+            </ul>
 
-            <li>
+            <ul>
               <%= link_to("投稿一覧","/posts/index")%>
-            </li>
+            </ul>
 
-            <li>
+            <ul>
               <%= link_to("ログアウト","/logout", method: :post)%>
-            </li>
+            </ul>
 
           <% else %>
-            <li>
+            <ul>
               <%= link_to("ログイン","/login") %>
-            </li>
+            </ul>
 
-            <li>
+            <ul>
               <%= link_to("新規登録","/signup")%>
-            </li>
+            </ul>
 
           <% end%>
         </ul>
+      </div>
+
+
 
         <% if flash[:notice]%>
           <div class="flash">
@@ -59,5 +64,5 @@
         <%= yield %>
       </div>
     </div>
-  </body>  
+  </body>
 </html>
