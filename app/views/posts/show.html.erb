@@ -1,32 +1,59 @@
 <div class="uk-container">
   <div class="main-show">
     <p>
-      <%= "idが「#{@post.id}」の投稿詳細画面です" %>
+      <%= "#{@post.user.name}の投稿詳細画面です" %>
     </p>
 
-    <div class="posts-left">
-      <%= image_tag "/user_images/#{@user.image_name}", width: "120" %>
-      <%= link_to(@user.name, "/users/#{@user.id}")%>
-    </div>
+    <div class="posts-show-contents">
+      <div class="post-center">
+        <div class="post-upper-item">
+          <div class="post_left">
+            <%= content_tag :div, nil, class: 'post_left', style: %Q(background-image: url('#{asset_path @user.image_name}')) %>
+          </div>
 
-    <div class="posts-show-index">
+          <div class="post-show-content">
+            <%= @post.content %>
+          </div>
+        </div>
+
+        <div class="post-show-image">
+          <% if @post.image_name %>
+            <%= image_tag "/post_images/#{@post.image_name}" %>
+          <%end%>
+        </div>
+      </div>
+
+      <div class="post-like">
+        <% if Like.find_by(user_id: @current_user, post_id: @post.id) %>
+          <%= link_to("/likes/#{@post.id}/destroy", {method:"post"}) do %>
+            <%= fa_icon "heart" %>
+            <%= @post.likes.count %>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+            <%= fa_icon "heart-o"%>
+            <% if @post.likes.exists? %>
+              <%= @post.likes.count %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
       <div class="post-show-item">
-      <% if @post.image_name %>
-        <%= image_tag "/post_images/#{@post.image_name}", width: "120" %>
-      <%end%>
-      <%= @post.content %>
+        <div class="post-show-item-two">
+          <% if @post.user_id == @current_user.id %>
+            <div class="post-item">
+              <%= link_to("編集","/posts/#{@post.id}/edit")%>
+              <%= link_to("削除","/posts/#{@post.id}/destroy" ,{method:"post"})%>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="post-time">
+          <%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %>
+        </div>
+
+      </div>
     </div>
-
-    <% if @post.user_id == @current_user.id %>
-
-      <div class="post-item">
-        <%= link_to("編集","/posts/#{@post.id}/edit")%>
-        <%= link_to("削除","/posts/#{@post.id}/destroy" ,{method:"post"})%>
-      </div>
-
-      <div class="post-time">
-        <%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %>
-      </div>
-    <% end %>
   </div>
 </div>

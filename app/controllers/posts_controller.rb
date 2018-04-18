@@ -13,10 +13,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(
-      user_id: session[:user_id],
-      content: params[:content],
-    )
+
+    @post = @current_user.posts.new(content: params[:content])
+    #これと同じ☝️@post = Post.new(user_id: session[:user_id],content: params[:content],)
 
     if @post.save
       flash[:notice]="投稿しました"
@@ -31,6 +30,8 @@ class PostsController < ApplicationController
       File.binwrite("public/post_images/#{@post.image_name}",image.read)
       @post.save
     end
+
+
 
   end
 
@@ -57,6 +58,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+
     redirect_to("/posts/index")
   end
 

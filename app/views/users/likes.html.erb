@@ -1,0 +1,46 @@
+<div class="user-like">
+  <div class="container">
+    <div class="user-icon">
+      <%= content_tag :div, nil, class: 'user-icon', style: %Q(background-image: url('#{asset_path @user.image_name}')) %>
+
+    </div>
+    <div class="user-name">
+      <h2><%= @user.name %></h2>
+    </div>
+    <div class="user-email">
+      <p><%= @user.email %></p>
+    </div>
+    <div class="user-link">
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集","/users/#{@user.id}/edit")%>
+        <%= link_to("退会","/users/#{@user.id}/destroy" ,{method:"post"})%>
+      <% end %>
+    </div>
+
+    <ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+    </ul>
+
+    <div class="user-posts">
+      <% @likes.each do |like| %>
+      <% post = Post.find_by(id: like.post_id)%>
+        <div class="user-content-img">
+          <div class="user-content">
+            <div class="post-userimg">
+              <img src="<%= "/user_images/#{post.user.image_name}" %>">
+            </div>
+            <div class="user-posts-p">
+              <%= like.post.content %>
+            </div>
+          </div>
+          <div class="user-posts-img">
+            <% if like.post.image_name %>
+              <%= image_tag "/post_images/#{like.post.image_name}" %>
+            <%end%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

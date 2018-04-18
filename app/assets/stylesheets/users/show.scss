@@ -28,3 +28,84 @@
 .user-link {
   text-align: center;
 }
+
+.user-posts {
+    padding: 20px 0px;
+    background-color: white;
+    box-shadow: 0 3px 10px #c1ced7;
+    overflow: hidden;
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+.user-posts-p {
+  color: #070607;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+
+.user-post-userimg img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+
+.user-content-and-img {
+  justify-content:flex-start;
+  box-shadow: 0 1px 2px #c1ced7;
+}
+
+.user-posts-img {
+  width: 400px;
+  margin-left: 30px;
+}
+
+
+.user-and-content {
+  display: flex;
+}
+
+.user-tabs {
+  padding: 20px 0px;
+  background-color: white;
+  box-shadow: 0 3px 10px #c1ced7;
+  overflow: hidden;
+  width: 130px;
+  margin-left: 260px;
+
+}
+
+.user-tabs li {
+  display: inline;
+  font-weight: bold;
+  margin-left: 13px;
+
+}
+
+.user-tabs a {
+  color: #070607;
+}
+
+.user-content {
+  display: flex;
+}
+
+.user-content img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}

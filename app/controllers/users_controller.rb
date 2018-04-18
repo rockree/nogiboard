@@ -92,4 +92,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def posts
+    return @user.posts(self.id)
+    
+  end
+
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id:[@user.id])
+  end
+
 end

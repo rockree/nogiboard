@@ -3,6 +3,9 @@
     <div class="posts-container">
       <h1 class="posts-heading">投稿一覧</h1>
       <% @posts.each do |post| %>
+        <% if post.user.blank? %>
+          <% next %>
+        <%end%>
 
         <div class="posts-index-item">
           <div class="posts-left">
@@ -15,13 +18,11 @@
                 <%= link_to(post.content,"/posts/#{post.id}")%>
               </div>
             </div>
-            <div class="post-show-item">
+            <div class="posts-show-item">
               <% if post.image_name %>
                 <%= image_tag "/post_images/#{post.image_name}" %>
               <%end%>
-
             </div>
-
           </div>
         </div>
           <%#= post.inspect %>

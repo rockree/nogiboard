@@ -12,14 +12,17 @@
  *
  *= require uikit-rtl
  *= require uikit
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
 
  body {
    margin: 0 auto;
    padding: 0 auto;
    width: 1100px;
+   min-height: 100vh;
 
  }
 
@@ -32,10 +35,11 @@
 
 .header-menu ul {
   display: inline;
-  list-style-type: none;
-  padding-right: 30px;
   font-weight: bold;
+}
 
+.header-menu {
+  text-align: center;
 }
 
 .header_menu a {
@@ -52,4 +56,10 @@
 
 .uk-container {
   color: #fff;
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+
 }

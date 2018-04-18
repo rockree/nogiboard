@@ -17,6 +17,31 @@
           <%= link_to("退会","/users/#{@user.id}/destroy" ,{method:"post"})%>
         <% end %>
       </div>
+
+      <ul class="user-tabs">
+        <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+        <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      </ul>
+
+      <div class="user-posts">
+        <% @user.posts.each do |post| %>
+          <div class="user-content-and-img">
+            <div class="user-and-content">
+              <div class="user-post-userimg">
+                <img src="<%= "/user_images/#{post.user.image_name}" %>">
+              </div>
+              <div class="user-posts-p">
+                <%= post.content %>
+              </div>
+            </div>
+            <div class="user-posts-img">
+              <% if post.image_name %>
+                <%= image_tag "/post_images/#{post.image_name}"  %>
+              <%end%>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
