@@ -1,32 +1,59 @@
-<div class="uk-container">
-  <div class="user-show-item">
-    <div class="container">
-      <div class="user-icon">
-        <%= content_tag :div, nil, class: 'user-icon', style: %Q(background-image: url('#{asset_path @user.image_name}')) %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- ビューポートの設定 -->
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nogiboard</title>
+    <%= csrf_meta_tags %>
 
-      </div>
-      <div class="user-name">
-        <h2><%= @user.name %></h2>
-      </div>
-      <div class="user-email">
-        <p><%= @user.email %></p>
-      </div>
-      <div class="user-link">
-        <% if @user.id == @current_user.id %>
-          <%= link_to("編集","/users/#{@user.id}/edit")%>
-          <%= link_to("退会","/users/#{@user.id}/destroy" ,{method:"post"})%>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+  <div class="uk-container">
+    <div class="user-icon">
+      <%= content_tag :div, nil, class: 'user-icon', style: %Q(background-image: url('#{asset_path @user.image_name}')) %>
+
+    </div>
+    <div class="user-name">
+      <h2><%= @user.name %></h2>
+    </div>
+    <div class="user-email">
+      <p><%= @user.email %></p>
+    </div>
+    <div class="user-link">
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集","/users/#{@user.id}/edit")%>
+        <%= link_to("退会","/users/#{@user.id}/destroy" ,{method:"post"})%>
+      <% end %>
+    </div>
+
+
+    <div class="user-content-all">
+
+      <div class="user-tabs">
+
+        <%= link_to("/users/#{@user.id}") do %>
+          <div class="first">
+            投稿
+          </div>
         <% end %>
+
+
+        <%= link_to("/users/#{@user.id}/likes") do %>
+          <div class="last">
+            いいね!
+          </div>
+        <% end %>
+
       </div>
-
-      <ul class="user-tabs">
-        <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
-        <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
-      </ul>
-
       <div class="user-posts">
         <% @user.posts.each do |post| %>
+
           <div class="user-content-and-img">
             <div class="user-and-content">
+
               <div class="user-post-userimg">
                 <img src="<%= "/user_images/#{post.user.image_name}" %>">
               </div>
@@ -43,5 +70,6 @@
         <% end %>
       </div>
     </div>
+
   </div>
-</div>
+</body>

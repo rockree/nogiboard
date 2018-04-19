@@ -1,4 +1,15 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+  min-height: 100vh;
+}
+
+
 .user-show-item {
   margin: 0 auto;
 }
@@ -34,10 +45,10 @@
     background-color: white;
     box-shadow: 0 3px 10px #c1ced7;
     overflow: hidden;
-    width: 500px;
     margin: 0 auto;
-
+    max-width: 520px;
 }
+
 
 .user-posts-p {
   color: #070607;
@@ -65,7 +76,7 @@
 }
 
 .user-posts-img {
-  width: 400px;
+  max-width: 400px;
   margin-left: 30px;
 }
 
@@ -74,29 +85,37 @@
   display: flex;
 }
 
+
 .user-tabs {
-  padding: 20px 0px;
+  font-weight: bold;
+  color: #070607;
+  text-align: center;
   background-color: white;
   box-shadow: 0 3px 10px #c1ced7;
   overflow: hidden;
-  width: 130px;
-  margin-left: 260px;
-
-}
-
-.user-tabs li {
-  display: inline;
-  font-weight: bold;
-  margin-left: 13px;
-
+  max-width: 520px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: stretch;
 }
 
 .user-tabs a {
-  color: #070607;
+  flex-grow: 1;//余白の割り振りをどうするか指定→全てに１（均等割）した
 }
+
+.user-tabs a div {
+  padding: 20px;
+}
+
+.user-tabs .last {
+  border-left:1px solid #c1ced7;
+}
+
 
 .user-content {
   display: flex;
+
 }
 
 .user-content img {
@@ -108,4 +127,16 @@
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.user-content-img {
+  box-shadow: 0 1px 3px #c1ced7;
+}
+
+.user-posts-img img {
+  margin-bottom: 30px;
+}
+
+@media(max-width:675px){
+
 }

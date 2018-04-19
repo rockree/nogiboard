@@ -1,18 +1,23 @@
 <div class="uk-container">
   <div class="main users-edit">
-    <div class="container">
+    <div class="edit-container">
       <div class="form-heading">アカウント編集</div>
-        <div class="form-body">
+      <div class="form-body">
           <!-- フォームの送信先を指定する -->
         <%= form_tag("/users/#{@user.id}/update", {multipart: true})do %>
-          <h2>画像</h2>
-          <input type="file" name="image">
+          <p>画像</p>
+          <div uk-form-custom>
+            <input type="file">
+            <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
+          </div>
           <p>ユーザー名</p>
           <!-- name属性を設定する -->
-          <input name="name" value="<%= @user.name %>">
+          <input class= "uk-input" name="name" value="<%= @user.name %>">
           <p>メールアドレス</p>
-          <input name="email" value="<%= @user.email %>">
-          <input type="submit" value="保存">
+          <input class= "uk-input" name="email" value="<%= @user.email %>">
+          <div class="uk-margin">
+            <input type="submit" class="uk-button uk-button-primary" value="保存">
+          </div>
         <% end %>
         </div>
     </div>

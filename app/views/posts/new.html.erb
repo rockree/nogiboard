@@ -1,18 +1,19 @@
 <div class="uk-container">
   <div class="post-new-index">
-
-    <%= form_tag("/posts/create", {multipart: true})do %>
-
-      <div class="form-body">
-        <h2>新規投稿</h2>
-        <input type="file" name="image">
+    <h2>新規投稿</h2>
+    <div class="form-body">
+      <%= form_tag("/posts/create", {multipart: true})do %>
+      <div uk-form-custom>
+        <input type="file">
+        <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
       </div>
-      <div class="text-box">
-        <textarea name="content" rows="14" cols="140"></textarea>
-      </div>
-      <div class="text-button">
-        <input type="submit" value="投稿">
-      </div>
+    </div>
+    <div class="uk-margin">
+      <textarea class="uk-textarea" name="content" rows="14" cols="140"></textarea>
+    </div>
+    <div class="uk-margin">
+      <input type="submit" class="uk-button uk-button-primary" value="投稿">
+    </div>
 
     <% end %>
 

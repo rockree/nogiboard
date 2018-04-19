@@ -21,9 +21,7 @@
  body {
    margin: 0 auto;
    padding: 0 auto;
-   width: 1100px;
    min-height: 100vh;
-
  }
 
 
@@ -33,13 +31,30 @@
 }
 
 
-.header-menu ul {
-  display: inline;
-  font-weight: bold;
-}
 
 .header-menu {
   text-align: center;
+  display: flex;
+  justify-content:space-around;
+  font-weight: bold;
+  align-items: center;
+
+}
+
+.header-menu-item {
+  font-size: 20px;
+}
+
+.current_user-img img {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+.current_user-img {
+  display: inline-block;
 }
 
 .header_menu a {
@@ -61,5 +76,27 @@
 footer {
   width: 100%;
   bottom: 0;
+
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+@media(max-width:675px){
+
+  .header-main-logo img {
+    display: none;
+  }
+
+  .header-menu-item-sp-hidden {
+    display: none;
+  }
+
+  .header-menu-item {
+    font-size: 35px;
+  }
+
 
 }

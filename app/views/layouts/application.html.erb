@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- ビューポートの設定 -->
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nogiboard</title>
     <%= csrf_meta_tags %>
 
@@ -18,39 +20,45 @@
       </div>
 
       <div class="header-menu">
-        <ul class= "header-menus">
-          <% if @current_user %>
-            <ul>
-              <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-            </ul>
+        <% if @current_user %>
 
-            <ul>
-              <%= link_to("新規投稿","/posts/new")%>
-            </ul>
+          <%= link_to("/users/#{@current_user.id}", class: "header-menu-item") do %>
+            <div class="current_user-img">
+              <%= image_tag("/user_images/#{@current_user.image_name}") %>
+            </div>
+            <span class="header-menu-item-sp-hidden"><%= @current_user.name %></span><!--消したいときに使うやつ-->
+          <% end %>
 
-            <ul>
-              <%= link_to("ユーザー一覧","/users/index")%>
-            </ul>
 
-            <ul>
-              <%= link_to("投稿一覧","/posts/index")%>
-            </ul>
 
-            <ul>
-              <%= link_to("ログアウト","/logout", method: :post)%>
-            </ul>
+          <%= link_to("/users/index", class: "header-menu-item") do %>
+            <%= fa_icon "users" %>
+            <span class="header-menu-item-sp-hidden">ユーザー一覧</span><!--消したいときに使うやつ-->
+          <% end %>
 
-          <% else %>
-            <ul>
-              <%= link_to("ログイン","/login") %>
-            </ul>
 
-            <ul>
-              <%= link_to("新規登録","/signup")%>
-            </ul>
+          <%= link_to("/posts/index", class: "header-menu-item") do %>
+            <%= fa_icon "comments" %>
+            <span class="header-menu-item-sp-hidden">投稿一覧</span><!--消したいときに使うやつ-->
+          <% end %>
 
-          <% end%>
-        </ul>
+
+          <%= link_to("/logout", class: "header-menu-item",method:"post") do %>
+            <%= fa_icon "sign-out" %>
+            <span class="header-menu-item-sp-hidden">ログアウト</span><!--消したいときに使うやつ-->
+          <% end %>
+
+
+
+        <% else %>
+
+          
+          <%= link_to("ログイン","/login") %>
+
+          <%= link_to("新規登録","/signup")%>
+
+        <% end%>
+
       </div>
 
 
@@ -65,5 +73,5 @@
       </div>
     </div>
   </body>
-  
+
 </html>

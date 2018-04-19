@@ -1,3 +1,90 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-body {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.login-forms {
+  max-width: 520px;
+}
+
+.main-users-login {
+  text-align: center;
+}
+
+.form-heading {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #070607;
+
+}
+
+.login-form {
+  display: block;
+}
+
+
+
+.login-forms {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.login-button input {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.login-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+
+
+.login-forms p {
+  font-weight: bold;
+  text-align: left;
+  color: #070607;
+}
+
+.user-signup {
+  margin-top: 30px;
+}
+
+.form-users-form {
+  margin: 0 auto;
+}
+
+
+.uk-margin {
+  text-align: center;
+}
+
+.form-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.user-signup p {
+  font-weight: bold;
+  color: #070607;
+}
+
+.uk-margin {
+  font-weight: bold;
+
+}
+
+.edit-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-body p {
+  font-weight: bold;
+  color: #070607;
+}

@@ -1,3 +1,9 @@
+
+<%= link_to("/posts/new", class: "posts-icon") do %>
+  <%= fa_icon "pencil" %>
+<% end %>
+
+
 <div class="posts-uk-container">
   <div class="main-posts-index">
     <div class="posts-container">
@@ -6,6 +12,8 @@
         <% if post.user.blank? %>
           <% next %>
         <%end%>
+
+
 
         <div class="posts-index-item">
           <div class="posts-left">
@@ -28,5 +36,8 @@
           <%#= post.inspect %>
       <% end %>
     </div>
+    <footer>
+      <p>&copy; Copyright NOGIBOARD. All rights reserved.</p>
+    </footer>
   </div>
 </div>

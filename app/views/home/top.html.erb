@@ -1,12 +1,16 @@
 
-<div class="topimage">
-  <%= image_tag("home/Untitled@3x.jpg", width: 1000, height: 500, alt: 'NOGIBOARD') %>
-</div>
+<html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <%= content_tag :div, nil, class: 'topimage', style: %Q(background-image: url("#{asset_path "home/Untitled@3x.jpg"}")) %>
 
-<div class="top-content">
-  <p>NOGI BOARD（のぎボード）は、乃木坂メンバーがメンバー間のみで使うSNSです。</p>
-</div>
+  <div class="top-content">
+    <p>NOGI BOARD（のぎボード）は、乃木坂メンバーがメンバー間のみで使うSNSです。</p>
+  </div>
 
-<footer>
-  <p>&copy; Copyright NOGIBOARD. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; Copyright NOGIBOARD. All rights reserved.</p>
+  </footer>
+</html>

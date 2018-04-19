@@ -17,11 +17,18 @@
       <% end %>
     </div>
 
-    <ul class="user-tabs">
-      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
-    </ul>
-
+    <div class="user-tabs">
+      <%= link_to("/users/#{@user.id}") do %>
+        <div class="first">
+          投稿
+        </div>
+      <% end %>
+      <%= link_to("/users/#{@user.id}/likes") do %>
+        <div class="last">
+          いいね!
+        </div>
+      <% end %>
+    </div>
     <div class="user-posts">
       <% @likes.each do |like| %>
       <% post = Post.find_by(id: like.post_id)%>

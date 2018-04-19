@@ -1,7 +1,7 @@
 
 <div class="uk-container">
   <div class="main-users-login">
-    <div class="container">
+    <div class="login-container">
       <div class="form-heading">NOGIBOARDにログイン</div>
         <div class="login-form">
           <div class="form-body">
@@ -14,12 +14,12 @@
           <div class="login-forms">
             <%= form_tag("/login")do %>
               <p>メールアドレス</p>
-              <input name="email" value="<% @email %>">
+              <input class= "uk-input" name="email" value="<% @email %>">
               <p>パスワード</p>
-              <input type="password" name="password" value="<% @password %>">
+              <input class= "uk-input" type="password" name="password" value="<% @password %>">
 
               <div class="login-button">
-                <input type="submit" value="ログイン">
+                <input type="submit" class="uk-button uk-button-primary" value="ログイン">
               </div>
             <% end %>
           </div>

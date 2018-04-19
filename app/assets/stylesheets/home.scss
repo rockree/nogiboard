@@ -1,14 +1,23 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: #e2c5d7;
 }
 
+
+
 .topimage {
   text-align: center;
   margin-top: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(100vw - 60px);
+  height: calc(960 / 1692 * 100vw)
 }
 
 .top-content p {
@@ -23,4 +32,20 @@ footer p {
   text-align: center;
   color: #070607;
   margin-top: 40px;
+}
+
+@media (max-width: 670px) {
+
+
+
+  // .topimage {
+  //   width:370px;
+  //   text-align: center;
+  // }
+
+  footer {
+
+    font-size: 8px;
+
+  }
 }

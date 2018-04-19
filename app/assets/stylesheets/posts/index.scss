@@ -1,4 +1,22 @@
 
+.posts-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 60px;
+  background-color: #843ba5;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+
+}
+
+
 .posts-index-item {
   max-width: 520px;
   margin: 0 auto;
