@@ -94,7 +94,7 @@ class UsersController < ApplicationController
 
   def posts
     return @user.posts(self.id)
-    
+
   end
 
   def likes

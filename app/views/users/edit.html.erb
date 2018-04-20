@@ -7,7 +7,7 @@
         <%= form_tag("/users/#{@user.id}/update", {multipart: true})do %>
           <p>画像</p>
           <div uk-form-custom>
-            <input type="file">
+            <input type="file" name="image">
             <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
           </div>
           <p>ユーザー名</p>

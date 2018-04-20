@@ -13,8 +13,6 @@
           <% next %>
         <%end%>
 
-
-
         <div class="posts-index-item">
           <div class="posts-left">
             <%= content_tag :div, nil, class: 'posts-left', style: %Q(background-image: url('#{asset_path post.user.image_name}')) %>
@@ -32,8 +30,29 @@
               <%end%>
             </div>
           </div>
-        </div>
-          <%#= post.inspect %>
+        </div>          <%#= post.inspect %>
+      <% end %>
+
+      <% if @page > 0 %>
+        <% link_to "/posts/index?page=#{@page}" do %>
+          [<%=@page %>]
+        <% end %>
+      <% end %>
+
+      <% 10.times do |x| %>
+        <% page = @page + x - 4 %>
+        <% if page <= 0 %>
+          <% next # 0ページ以下を表示しようとしているとき %>
+        <% end %>
+        
+        <% max_page = (@record_count / @page_num.to_f).ceil %>
+        <% if page > max_page %>
+          <% next # 最大ページ数を上回っているとき %>
+        <% end %>
+
+        <%= link_to "/posts/index?page=#{page}" do %>
+          <%= "[#{page}]" %>
+        <% end %>
       <% end %>
     </div>
     <footer>

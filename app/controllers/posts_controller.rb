@@ -1,7 +1,16 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all()
-    @posts = Post.all.order(created_at: :desc)
+    page = params[:page] #12345567...,nil
+
+    if page == nil
+       page = 1
+    end
+
+    @page = page.to_i #to_iは、文字列を受けとってコピーして整数にして返す。非破壊的メソッド
+
+    @page_num = 5#１ページに表示したいやつ
+    @record_count = Post.where("id > 0").count
+    @posts = Post.all.order(created_at: :desc).limit(@page_num).offset((@page-1) * @page_num)
   end
 
   def show

@@ -12,11 +12,13 @@ body {
 
 
 .topimage {
+  max-width:1200px;
   text-align: center;
+  display: flex;
   margin-top: 20px;
   background-repeat: no-repeat;
   background-size: contain;
-  width: calc(100vw - 60px);
+  width: calc(100vw - 30px);
   height: calc(960 / 1692 * 100vw)
 }
 
