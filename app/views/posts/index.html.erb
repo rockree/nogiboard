@@ -33,27 +33,29 @@
         </div>          <%#= post.inspect %>
       <% end %>
 
-      <% if @page > 0 %>
-        <% link_to "/posts/index?page=#{@page}" do %>
-          [<%=@page %>]
-        <% end %>
-      <% end %>
+      <div class="pagenation">
+        <ul class="uk-pagination uk-flex-center">
 
-      <% 10.times do |x| %>
-        <% page = @page + x - 4 %>
-        <% if page <= 0 %>
-          <% next # 0ページ以下を表示しようとしているとき %>
-        <% end %>
-        
-        <% max_page = (@record_count / @page_num.to_f).ceil %>
-        <% if page > max_page %>
-          <% next # 最大ページ数を上回っているとき %>
-        <% end %>
 
-        <%= link_to "/posts/index?page=#{page}" do %>
-          <%= "[#{page}]" %>
-        <% end %>
-      <% end %>
+          <% 10.times do |x| %>
+            <% page = @page + x - 4 %>
+            <% if page <= 0 %>
+              <% next # 0ページ以下を表示しようとしているとき %>
+            <% end %>
+
+            <% max_page = (@record_count / @page_num.to_f).ceil %>
+            <% if page > max_page %>
+              <% next # 最大ページ数を上回っているとき %>
+            <% end %>
+
+            <li>
+              <%= link_to "/posts/index?page=#{page}" do %>
+                <%= "| #{page} |" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <footer>
       <p>&copy; Copyright NOGIBOARD. All rights reserved.</p>

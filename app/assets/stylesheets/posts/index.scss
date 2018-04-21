@@ -1,3 +1,8 @@
+.posts-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
 
 .posts-icon {
   position: fixed;
@@ -27,7 +32,6 @@
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
-  margin-left: 240px;
 }
 
 
@@ -67,4 +71,29 @@
 
 .post-user-name {
   margin-top: 13px;
+}
+
+
+.pagenation a {
+  color: #4a566b;
+
+}
+
+.pagenation ul {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-every;
+  margin-left: 0;
+
+}
+
+
+.uk-margin-edit {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.uk-textarea {
+  margin-top: 30px;
 }
