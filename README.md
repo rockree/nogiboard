@@ -2,6 +2,10 @@
 
 NOGIBOARDは、乃木坂メンバーがメンバー間のみで使うSNS（という設定で乃木坂オタクが楽しむ妄想ツールのSNS）です。
 
++ 「自分の好きなメンバーならこんなことを呟くだろうな」というのを想像して、他のオタク仲間と「わかる！」を共有できます  
++ Twitterではつぶやきにくいこともここでなら呟けるかもしれません  
++ クローズドなコミュニティーで共通の趣味を持った人たちと楽しむことができます
+
 | sp | pc |
 | --- | --- |
 | ![](https://github.com/rockree/nogiboard/blob/master/screenshots/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202018-04-21%2015.25.58.png) | ![](https://raw.githubusercontent.com/rockree/nogiboard/master/screenshots/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202018-04-19%2014.01.59.png) |
@@ -9,10 +13,6 @@ NOGIBOARDは、乃木坂メンバーがメンバー間のみで使うSNS（と�
 ![](https://github.com/rockree/nogiboard/blob/master/screenshots/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202018-04-21%200.35.00.png) | ![](https://github.com/rockree/nogiboard/blob/master/screenshots/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202018-04-19%2014.02.28.png) |
 
 
-
-+ 「自分の好きなメンバーならこんなことを呟くだろうな」というのを想像して、他のオタク仲間と「わかる！」を共有できます  
-+ Twitterではつぶやきにくいこともここでなら呟けるかもしれません  
-+ クローズドなコミュニティーで共通の趣味を持った人たちと楽しむことができます
 
 # 標準機能
 　
