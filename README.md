@@ -1,24 +1,28 @@
-# README
+# NOGIBOARD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<details><summary>NOGIBOARDは、乃木坂メンバーがメンバー間のみで使うSNS（という設定で乃木坂オタクが楽しむ妄想ツールのSNS）です。</summary>
+  
+ + 「自分の好きなメンバーならこんなことを呟くだろうな」というのを想像して、他のオタク仲間と「わかる！」を共有できます
+  
+ + Twitterではつぶやきにくいこともここでなら呟けるかもしれません
+  
+ + クローズドなコミュニティーで共通の趣味を持った人たちと楽しむことができます
+  
+# 標準機能
+　
+ + ユーザー登録/退会
 
-Things you may want to cover:
+ + 登録時メール送信
+ 
+ +  ログイン/ログアウト
+ 
+ + 投稿、編集、ツイ消し
+ 
+ + いいね
+ 
+ + ユーザー編集
+ 
+ + ユーザー一覧
+ 
+ + 投稿一覧
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
